@@ -1,0 +1,4 @@
+[ERROR] 2023-05-26 14:19:37 GMT-04: SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+[ERROR] 2023-05-26 14:51:03 GMT-04: SequelizeDatabaseError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[] NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB' at line 1
+[ERROR] 2023-05-26 14:53:03 GMT-04: GET / 404 2ms.
+[ERROR] 2023-05-26 14:53:03 GMT-04: GET /favicon.ico 404 1ms.

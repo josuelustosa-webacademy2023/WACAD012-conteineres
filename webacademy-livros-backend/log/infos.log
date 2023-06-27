@@ -1,0 +1,49 @@
+[INFO] 2023-05-26 14:51:03 GMT-04: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'livros' AND TABLE_SCHEMA = 'docker_webacademy'
+[INFO] 2023-05-26 14:51:03 GMT-04: Executing (default): CREATE TABLE IF NOT EXISTS `livros` (`id` CHAR(36) BINARY , `nome` VARCHAR(180) NOT NULL, `sinopse` TEXT NOT NULL, `isbn` VARCHAR(13) NOT NULL UNIQUE, `url_imagem` TEXT, `autores` VARCHAR(180)[] NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+[INFO] 2023-05-26 14:52:46 GMT-04: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'livros' AND TABLE_SCHEMA = 'docker_webacademy'
+[INFO] 2023-05-26 14:52:46 GMT-04: Executing (default): SHOW INDEX FROM `livros`
+[INFO] 2023-05-26 14:52:46 GMT-04: SERVIDOR RODANDO VIOLENTAMENTE NA PORTA 4444.
+[INFO] 2023-05-26 14:53:11 GMT-04: GET /api/ 200 0ms.
+[INFO] 2023-05-26 14:53:11 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 14:53:11 GMT-04: GET /api/livros 200 15ms.
+[INFO] 2023-05-26 14:53:12 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 14:53:12 GMT-04: GET /api/ 304 0ms.
+[INFO] 2023-05-26 14:53:12 GMT-04: GET /api/livros 304 2ms.
+[INFO] 2023-05-26 14:54:14 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`id` = '72230096-30f9-4bea-a535-df56c0640146';
+[INFO] 2023-05-26 14:54:14 GMT-04: Executing (default): INSERT INTO `livros` (`id`,`nome`,`sinopse`,`isbn`,`url_imagem`,`autores`) VALUES (?,?,?,?,?,?);
+[INFO] 2023-05-26 14:54:14 GMT-04: POST /api/livros 201 24ms.
+[INFO] 2023-05-26 14:54:14 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 14:54:14 GMT-04: GET /api/livros 200 2ms.
+[INFO] 2023-05-26 14:54:18 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`isbn` = '9788555192555';
+[INFO] 2023-05-26 14:54:18 GMT-04: GET /api/livros/9788555192555 200 5ms.
+[INFO] 2023-05-26 14:54:53 GMT-04: GET /api/ 304 0ms.
+[INFO] 2023-05-26 14:54:53 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 14:54:53 GMT-04: GET /api/livros 304 7ms.
+[INFO] 2023-05-26 14:59:27 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`id` = '7ac3ee5a-1a2d-46f6-8f35-93b6e67073bf';
+[INFO] 2023-05-26 14:59:27 GMT-04: Executing (default): INSERT INTO `livros` (`id`,`nome`,`sinopse`,`isbn`,`url_imagem`,`autores`) VALUES (?,?,?,?,?,?);
+[INFO] 2023-05-26 14:59:27 GMT-04: POST /api/livros 201 26ms.
+[INFO] 2023-05-26 14:59:27 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 14:59:27 GMT-04: GET /api/livros 200 2ms.
+[INFO] 2023-05-26 14:59:30 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`isbn` = '9780672324536';
+[INFO] 2023-05-26 14:59:30 GMT-04: GET /api/livros/9780672324536 200 3ms.
+[INFO] 2023-05-26 15:00:04 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`isbn` = '9780672324536';
+[INFO] 2023-05-26 15:00:04 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`id` = 'bbb11772-d978-4ee2-9702-c28f0549c517';
+[INFO] 2023-05-26 15:00:04 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`id` = 'bbb11772-d978-4ee2-9702-c28f0549c517';
+[INFO] 2023-05-26 15:00:04 GMT-04: Executing (default): UPDATE `livros` SET `nome`=?,`sinopse`=?,`autores`=? WHERE `id` = ?
+[INFO] 2023-05-26 15:00:04 GMT-04: PATCH /api/livros/9780672324536 200 39ms.
+[INFO] 2023-05-26 15:00:04 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 15:00:04 GMT-04: GET /api/livros 200 4ms.
+[INFO] 2023-05-26 15:00:10 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`isbn` = '9780672324536';
+[INFO] 2023-05-26 15:00:10 GMT-04: GET /api/livros/9780672324536 200 4ms.
+[INFO] 2023-05-26 15:00:16 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 15:00:16 GMT-04: GET /api/ 304 0ms.
+[INFO] 2023-05-26 15:00:16 GMT-04: GET /api/livros 304 3ms.
+[INFO] 2023-05-26 15:00:29 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro` WHERE `Livro`.`isbn` = '9780672324536';
+[INFO] 2023-05-26 15:00:29 GMT-04: Executing (default): DELETE FROM `livros` WHERE `id` = 'bbb11772-d978-4ee2-9702-c28f0549c517'
+[INFO] 2023-05-26 15:00:29 GMT-04: DELETE /api/livros/9780672324536 200 20ms.
+[INFO] 2023-05-26 15:00:33 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 15:00:33 GMT-04: GET /api/ 304 1ms.
+[INFO] 2023-05-26 15:00:33 GMT-04: GET /api/livros 200 2ms.
+[INFO] 2023-05-26 15:51:13 GMT-04: GET /api/ 304 0ms.
+[INFO] 2023-05-26 15:51:13 GMT-04: Executing (default): SELECT `id`, `nome`, `sinopse`, `isbn`, `url_imagem` AS `urlImagem`, `autores` FROM `livros` AS `Livro`;
+[INFO] 2023-05-26 15:51:13 GMT-04: GET /api/livros 304 7ms.
