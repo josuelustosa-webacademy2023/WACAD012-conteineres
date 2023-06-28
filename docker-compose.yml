@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  container_mysql:
+    image: mysql:latest
+    container_name: container_mysql
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_DATABASE=db_docker
+      - MYSQL_ROOT_PASSWORD=Web@cad123
+    volumes:
+      - vol_mysql:/var/lib/mysql
+    networks:
+      - rede_container_mysql
+
+  container_pma:
+    container_name: container_pma
+    image: phpmyadmin:latest
+    ports:
+      - 8080:8080
+    environment:
+      - PMA_HOST=container_mysql
+      - PMA_PORT=3306
+      - PMA_USER=webacademy
+      - PMA_PASSWORD=Web@cad123
+    depends_on:
+      - container_mysql
+    networks:
+      - rede_container_mysql
+
+  frontend:
+    build:
+      context: ./webacademy-livros-frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - 8000:80
+    networks:
+      - rede_container_mysql
+
+  backend:
+    build:
+      context: ./webacademy-livros-backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - 4444:4444
+    networks:
+      - rede_container_mysql
+    restart: always
+
+networks:
+  rede_container_mysql:
+    driver: bridge
+
+volumes:
+  vol_mysql:
